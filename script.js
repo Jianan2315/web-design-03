@@ -11,6 +11,7 @@ function toggleText(textarea) {
     textarea.style.display = 'none';
   }
 }
+
 // Function to add the click event listener to each image
 function addClickEvent(icon) {
   icon.addEventListener('click', function() {toggleText(icon.parentElement.parentElement.nextElementSibling);});
@@ -72,7 +73,6 @@ function addChangeEvent(checkbox) {
   checkbox.addEventListener('change', toggleButtons);
 }
 
-
 // Add a new student row with pop-up
 function addNewStudent() {
   const table = document.getElementById('myTable');
@@ -129,35 +129,6 @@ function addNewStudent() {
     showPopupMessage(`Failed to add Student ${highestStudentNumber}`);
   }
 }
-
-// get 3 dropdown icons
-const icons = document.querySelectorAll('.toggleImage');
-// Loop through 3 image and call the addClickEvent function
-icons.forEach(addClickEvent);
-// Add event listeners for 3checkboxes
-const checkboxes = document.querySelectorAll("#myTable input[type='checkbox']");
-checkboxes.forEach(addChangeEvent);
-
-document.getElementById('addButton').addEventListener('click', addNewStudent);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 // Function to create a pop-up message
 function showPopupMessage(message) {
@@ -241,7 +212,17 @@ function editRow(editButton) {
   document.body.appendChild(popup);
 }
 
+// get 3 dropdown icons
+const icons = document.querySelectorAll('.toggleImage');
+// Loop through 3 image and call the addClickEvent function
+icons.forEach(addClickEvent);
+// Add event listeners for 3checkboxes
+const checkboxes = document.querySelectorAll("#myTable input[type='checkbox']");
+checkboxes.forEach(addChangeEvent);
+
 // SUBMIT SELECTED AWARDS button pop-up
 document.getElementById('submitButton').addEventListener('click', function() {
   showPopupMessage('Successful Submission');
 });
+
+document.getElementById('addButton').addEventListener('click', addNewStudent);

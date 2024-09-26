@@ -1,6 +1,9 @@
 body {
   font-family: 'Helvetica Neue', 'Helvetica', sans-serif;
 }
+h1 {
+  margin: 1% 4%;
+}
 /*submit button*/
 #submitButton {
   margin-left: 180px;
